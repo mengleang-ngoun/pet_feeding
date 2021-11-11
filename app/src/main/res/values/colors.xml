@@ -6,5 +6,12 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
+
+<!--color for pet feeding app-->
     <color name="white">#FFFFFFFF</color>
+    <color name="Primary_pink">#FEABAE</color>
+    <color name="secondary_darkPink">#CB898B</color>
+    <color name="button_brown">#817455</color>
+    <color name="bottom_title_color">#FD969C</color>
+
 </resources>
