@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -23,19 +24,20 @@ class SignInFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val forgetPasswordBtn = view.findViewById<TextView>(R.id.forget_password_nav)
-        val signUpBtn = view.findViewById<TextView>(R.id.sign_up_nav)
+        val forgetPasswordNav = view.findViewById<FrameLayout>(R.id.forget_password_nav)
+        val signUpBtn = view.findViewById<FrameLayout>(R.id.sign_up_nav)
 
-        forgetPasswordBtn.setOnClickListener {
-            showFragment(ForgotPasswordFragment())
+        forgetPasswordNav.setOnClickListener {
+            requireActivity().supportFragmentManager.commit {
+                replace(R.id.authentication_fragment_container_view,ForgotPasswordFragment())
+                addToBackStack("auth")
+            }
         }
         signUpBtn.setOnClickListener {
-            showFragment(SignUpFragment())
-        }
-    }
-    private fun showFragment(fragment: Fragment){
-        requireActivity().supportFragmentManager.commit {
-            replace(R.id.authentication_fragment_container_view,fragment)
+            requireActivity().supportFragmentManager.commit {
+                replace(R.id.authentication_fragment_container_view,SignUpFragment())
+                addToBackStack("auth")
+            }
         }
     }
 }

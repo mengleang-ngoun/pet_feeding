@@ -1,22 +1,21 @@
 package com.example.pet_feeding
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
+import com.example.pet_feeding.ui.auth.EmailVerificationFragment
 import com.example.pet_feeding.ui.auth.SignInFragment
 import com.example.pet_feeding.ui.auth.SignUpFragment
+import kotlin.math.log
 
 class AuthenticationActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        showFragment(SignInFragment())
-        setContentView(R.layout.activity_authentication)
-    }
-    private fun showFragment(fragment: Fragment){
         supportFragmentManager.commit {
-            replace(R.id.authentication_fragment_container_view,fragment)
-            addToBackStack(null)
+            replace(R.id.authentication_fragment_container_view,SignInFragment())
         }
+        setContentView(R.layout.activity_authentication)
     }
 }
