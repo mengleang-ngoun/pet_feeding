@@ -74,8 +74,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/round_corner_toggle"
-                android:textColor="@color/white"
-                android:maxLength="16"/>
+                android:textColor="@color/white"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/sign_up_password"
@@ -91,8 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/round_corner_toggle"
-                android:textColor="@color/white"
-                android:maxLength="16"/>
+                android:textColor="@color/white"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/sign_up_con_password"
@@ -108,8 +106,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/round_corner_toggle"
-                android:textColor="@color/white"
-                android:maxLength="16"/>
+                android:textColor="@color/white"/>
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
@@ -139,6 +136,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true">
         <TextView
+            android:id="@+id/sign_in_nav"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sign In"

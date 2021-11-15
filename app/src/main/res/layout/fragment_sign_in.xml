@@ -75,8 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/round_corner_toggle"
-                android:textColor="@color/white"
-                android:maxLength="16"/>
+                android:textColor="@color/white"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/sign_in_password"
@@ -92,14 +91,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/round_corner_toggle"
-                android:textColor="@color/white"
-                android:maxLength="16"/>
+                android:textColor="@color/white"/>
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
 
     <RelativeLayout
-        android:id="@+id/sign_in_button"
+        android:id="@+id/sign_in_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/sign_in_form">
@@ -112,34 +110,40 @@
             android:textSize="32dp"
             android:textStyle="bold" />
         <ImageButton
+            android:id="@+id/sign_in_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:background="@drawable/circle_button"
             android:src="@drawable/ic_baseline_arrow_forward_24" />
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true">
+
         <TextView
+            android:id="@+id/sign_up_nav"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/half_background_sm"
             android:text="Sign Up"
             android:textColor="@color/white"
             android:textSize="18dp"
-            android:textStyle="bold"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/half_background_sm"/>
+            android:textStyle="bold" />
+
         <TextView
+            android:id="@+id/forget_password_nav"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Forgot Password"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
+            android:background="@drawable/half_background_sm"
+            android:text="Forgot Password"
             android:textColor="@color/white"
             android:textSize="18dp"
-            android:textStyle="bold"
-            android:background="@drawable/half_background_sm"/>
+            android:textStyle="bold" />
     </RelativeLayout>
 </RelativeLayout>
