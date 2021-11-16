@@ -14,6 +14,14 @@
     <string name="AddPet">Add A Pet</string>
     <string name="products">Products</string>
     <string name="add_device">Connect Device</string>
+    <string name="input_hint_username">Username</string>
+    <string name="input_hint_email">Email</string>
+    <string name="input_hint_password">Password</string>
+    <string name="input_hint_con_password">Confirm Password</string>
+    <string name="input_hint_code">Verify Code</string>
+    <string name="nav_sign_in">Sign In</string>
+    <string name="nav_sign_up">Sign Up</string>
+    <string name="nav_forget_password">Forgot Password</string>
 
     <!-- Setting Activity string -->
     <string name="manage_account">Manage Account</string>
