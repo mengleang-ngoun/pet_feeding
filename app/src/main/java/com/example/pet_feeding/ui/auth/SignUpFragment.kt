@@ -13,9 +13,11 @@ import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.example.pet_feeding.R
+import com.google.android.material.progressindicator.CircularProgressIndicator
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlin.math.log
 
@@ -25,6 +27,9 @@ class SignUpFragment : Fragment() {
     private lateinit var passwordInput: TextInputLayout
     private lateinit var conPasswordInput: TextInputLayout
     private lateinit var usernameInput: TextInputLayout
+    private lateinit var loading: CircularProgressIndicator
+    private lateinit var signInNav: FrameLayout
+    private lateinit var signUpBtn: ImageButton
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,13 +42,13 @@ class SignUpFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val signInNav = view.findViewById<FrameLayout>(R.id.sign_in_nav)
-        val signUpBtn = view.findViewById<ImageButton>(R.id.sign_up_btn)
-
+        signInNav = view.findViewById(R.id.sign_in_nav)
+        signUpBtn = view.findViewById(R.id.sign_up_btn)
         usernameInput = view.findViewById(R.id.sign_up_username)
         emailInput = view.findViewById(R.id.sign_up_email)
         passwordInput = view.findViewById(R.id.sign_up_password)
         conPasswordInput = view.findViewById(R.id.sign_up_con_password)
+        loading = view.findViewById(R.id.loading)
 
         signInNav.setOnClickListener {
             requireActivity().supportFragmentManager.commit {
@@ -52,44 +57,68 @@ class SignUpFragment : Fragment() {
             }
         }
 
+        usernameInput.editText?.addTextChangedListener {
+            usernameInput.error = null
+            usernameInput.isErrorEnabled = false
+        }
         passwordInput.editText?.addTextChangedListener {
             passwordInput.error = null
             passwordInput.isErrorEnabled = false
+            conPasswordInput.error = null
+            conPasswordInput.isErrorEnabled = false
         }
         conPasswordInput.editText?.addTextChangedListener {
             conPasswordInput.error = null
             conPasswordInput.isErrorEnabled = false
         }
-        emailInput.editText?.addTextChangedListener{
+        emailInput.editText?.addTextChangedListener {
             emailInput.error = null
             emailInput.isErrorEnabled = false
         }
 
         signUpBtn.setOnClickListener {
 
-            val checkPassword =  conPasswordInput.editText?.text.toString() == passwordInput.editText?.text.toString()
-            val checkPasswordLen =  passwordInput.editText?.text.toString().length < 6
-            val checkConPasswordLen =  conPasswordInput.editText?.text.toString().length < 6
-            val checkEmail = emailInput.editText?.text.toString().matches(Regex("[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"))
+            val checkPassword =
+                conPasswordInput.editText?.text.toString() == passwordInput.editText?.text.toString()
+            val checkPasswordLen = passwordInput.editText?.text.toString().length < 6
+            val checkConPasswordLen = conPasswordInput.editText?.text.toString().length < 6
+            val checkEmail = emailInput.editText?.text.toString()
+                .matches(Regex("[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"))
 
-            if (checkPasswordLen){
+            if (passwordInput.editText?.text.toString() == ""){
+                passwordInput.error = "Password is empty"
+            }
+            else if (checkPasswordLen) {
                 passwordInput.error = "Password must more than 6 digit"
             }
-            if (checkConPasswordLen){
+
+            if (conPasswordInput.editText?.text.toString() == ""){
+                conPasswordInput.error = "Confirm password is empty"
+            }
+            else if (checkConPasswordLen) {
                 conPasswordInput.error = "Confirm Password must more than 6 digit"
+            }
+
+            if (emailInput.editText?.text.toString() == ""){
+                emailInput.error = "Email is empty"
+            }
+            else if (!checkEmail) {
+                emailInput.error = "Email invalid"
+            }
+
+            if(usernameInput.editText?.text.toString().isEmpty()){
+                usernameInput.error = "Username is empty"
+            }else if (!usernameInput.editText?.text.toString().matches(Regex("\\w+"))){
+                usernameInput.error = "Username is alphanumeric only"
             }
 
             if (!checkPassword && !checkPasswordLen && !checkConPasswordLen) {
                 conPasswordInput.error = "Password and Confirm password not match"
             }
 
-            if (!checkEmail){
-                emailInput.error = "Email invalid"
-            }
-
-            if (checkEmail && checkPassword && !checkConPasswordLen && !checkPasswordLen){
-                conPasswordInput.error = null
-                conPasswordInput.isErrorEnabled = false
+            if (!emailInput.isErrorEnabled && !passwordInput.isErrorEnabled && !conPasswordInput.isErrorEnabled && !usernameInput.isErrorEnabled) {
+                signUpBtn.visibility = View.GONE
+                loading.visibility = View.VISIBLE
                 createAccount(
                     emailInput.editText?.text.toString(),
                     passwordInput.editText?.text.toString()
@@ -102,10 +131,17 @@ class SignUpFragment : Fragment() {
         authentication.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
-                    Log.d("test", "createUserWithEmail:success")
+                    Firebase.firestore.collection("usernames").add(
+                        hashMapOf(
+                            "username" to usernameInput.editText?.text.toString(),
+                            "udi" to Firebase.auth.currentUser?.uid
+                        )
+                    )
                 } else {
-                    emailInput.error = "Email is token"
+                    emailInput.error = task.exception?.message.toString()
                 }
+                loading.visibility = View.GONE
+                signUpBtn.visibility = View.VISIBLE
             }
     }
 

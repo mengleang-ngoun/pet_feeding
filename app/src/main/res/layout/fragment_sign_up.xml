@@ -132,11 +132,22 @@
             android:textSize="32dp"
             android:textStyle="bold" />
 
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:indeterminate="true"
+            app:trackColor="@color/secondary_darkPink"
+            app:indicatorColor="@color/Primary_pink"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
+
         <ImageButton
             android:id="@+id/sign_up_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:background="@drawable/circle_button"
             android:src="@drawable/ic_baseline_arrow_forward_24" />
     </RelativeLayout>
