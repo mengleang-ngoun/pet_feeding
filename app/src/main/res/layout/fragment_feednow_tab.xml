@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.feednowTab"
+    android:background="@color/Primary_pink"
+    android:orientation="vertical"
+    android:padding="20dp"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:textAlignment="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_food"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/amount_of_food"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="40dp"
+            android:text="@string/amount_of_food"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/weight_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/grams"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold"
+
+            />
+
+
+
+    </LinearLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="@string/hint_text_feeding_amount"
+    android:textColorHint="@color/white_50p"
+    android:paddingVertical="5dp"
+    android:gravity="center"
+        android:layout_marginTop="100dp"
+    >
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/feeding_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_corner_toggle"
+        android:textColor="@color/white"
+        android:maxLength="16"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageButton
+        android:id="@+id/bt_feeding_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:background="@drawable/circle_button"
+        android:src="@drawable/ic_baseline_arrow_forward_24"
+        android:layout_marginTop="30dp"
+        />
+
+
+
+</LinearLayout>

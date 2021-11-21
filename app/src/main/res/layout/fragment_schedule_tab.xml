@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.scheduleTab"
+    android:background="@color/Primary_pink"
+>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/buttonround"
+        android:backgroundTint="@color/white"
+        android:layout_margin="20dp"
+        >
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:checked="true"
+            app:thumbTint="@color/secondary_darkPink"
+            app:trackTint="@color/Primary_pink"
+
+
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12:00 am"
+            android:textColor="@color/Primary_pink"
+            android:textSize="20dp"
+
+            android:textStyle="bold"
+            android:paddingLeft="20dp"
+            android:layout_gravity="center"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Repeat"
+            android:textColor="@color/Primary_pink"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="2dp"
+            />
+
+        <ImageView
+            android:layout_marginLeft="40dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/bt_edit"
+            android:layout_gravity="center"
+            />
+
+        <ImageView
+            android:layout_marginLeft="25dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/bt_exist"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating_action_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="@color/white"
+        app:srcCompat="@drawable/ic_cross"
+        app:tint="@color/Primary_pink" />
+
+
+
+
+
+
+</RelativeLayout>

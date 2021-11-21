@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        replaceFragment(profileFragment)
+        replaceFragment(homeFragment)
 
 
         val bottom_navigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
