@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pet_feeding">
         <activity
-            android:name=".AddFeedingDeviceActivity"
+            android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
@@ -17,7 +17,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".AddFeedingDeviceActivity"/>
         <activity android:name=".StartActivity"/>
         <activity android:name=".AuthenticationActivity"/>
     </application>
