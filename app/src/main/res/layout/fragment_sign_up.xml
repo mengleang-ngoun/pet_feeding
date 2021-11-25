@@ -56,6 +56,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="text"
                 android:background="@drawable/round_corner_toggle"
                 android:textColor="@color/white"
                 android:maxLength="16"/>
@@ -70,11 +71,13 @@
             app:boxStrokeWidth="0dp"
             app:boxStrokeWidthFocused="0dp"
             >
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/round_corner_toggle"
-                android:textColor="@color/white"/>
+                android:inputType="textEmailAddress"
+                android:textColor="@color/white" />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/sign_up_password"
@@ -85,12 +88,14 @@
             android:paddingVertical="5dp"
             app:boxStrokeWidth="0dp"
             app:boxStrokeWidthFocused="0dp"
+            app:endIconMode="password_toggle"
             >
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="textPassword"
                 android:background="@drawable/round_corner_toggle"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white" />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/sign_up_con_password"
@@ -101,10 +106,12 @@
             android:paddingVertical="5dp"
             app:boxStrokeWidth="0dp"
             app:boxStrokeWidthFocused="0dp"
+            app:endIconMode="password_toggle"
             >
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="textPassword"
                 android:background="@drawable/round_corner_toggle"
                 android:textColor="@color/white"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -125,11 +132,22 @@
             android:textSize="32dp"
             android:textStyle="bold" />
 
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:indeterminate="true"
+            app:trackColor="@color/secondary_darkPink"
+            app:indicatorColor="@color/Primary_pink"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
+
         <ImageButton
             android:id="@+id/sign_up_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:background="@drawable/circle_button"
             android:src="@drawable/ic_baseline_arrow_forward_24" />
     </RelativeLayout>
