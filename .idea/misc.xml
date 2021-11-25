@@ -29,12 +29,13 @@
         <entry key="..\:/Pets feeding/app/src/main/res/layout/fragment_home.xml" value="0.1762917933130699" />
         <entry key="..\:/Pets feeding/app/src/main/res/layout/fragment_profile.xml" value="0.1762917933130699" />
         <entry key="..\:/Pets feeding/app/src/main/res/layout/fragment_schedule_feednow.xml" value="0.22" />
-        <entry key="..\:/Pets feeding/app/src/main/res/layout/fragment_schedule_tab.xml" value="0.12" />
+        <entry key="..\:/Pets feeding/app/src/main/res/layout/fragment_schedule_tab.xml" value="0.18" />
         <entry key="..\:/Pets feeding/app/src/main/res/layout/fragment_setting.xml" value="0.2" />
         <entry key="..\:/Pets feeding/app/src/main/res/layout/fragment_sign_in.xml" value="0.3625" />
         <entry key="..\:/Pets feeding/app/src/main/res/layout/fragment_sign_up.xml" value="0.3625" />
         <entry key="..\:/Pets feeding/app/src/main/res/layout/fragment_sign_up_verification_code.xml" value="0.3625" />
-        <entry key="..\:/Pets feeding/app/src/main/res/layout/schedule_layout.xml" value="0.3625" />
+        <entry key="..\:/Pets feeding/app/src/main/res/layout/pet_feeding_start.xml" value="0.1546875" />
+        <entry key="..\:/Pets feeding/app/src/main/res/layout/schedule_layout.xml" value="0.25" />
         <entry key="..\:/Pets feeding/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.21875" />
         <entry key="..\:/Pets feeding/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.21875" />
         <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/drawable/half_background_sm.xml" value="0.2703125" />
