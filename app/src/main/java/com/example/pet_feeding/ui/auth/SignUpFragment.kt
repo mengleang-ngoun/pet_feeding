@@ -1,5 +1,6 @@
 package com.example.pet_feeding.ui.auth
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import android.widget.TextView
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
+import com.example.pet_feeding.MainActivity
 import com.example.pet_feeding.R
 import com.google.android.material.progressindicator.CircularProgressIndicator
 import com.google.android.material.textfield.TextInputLayout
@@ -137,6 +139,8 @@ class SignUpFragment : Fragment() {
                             "udi" to Firebase.auth.currentUser?.uid
                         )
                     )
+                    startActivity(Intent(requireContext(), MainActivity::class.java))
+                    requireActivity().finish()
                 } else {
                     emailInput.error = task.exception?.message.toString()
                 }

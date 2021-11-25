@@ -1,5 +1,6 @@
 package com.example.pet_feeding
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +10,8 @@ import com.example.pet_feeding.fragment.ProfileFragment
 import com.example.pet_feeding.fragment.SettingFragment
 import com.example.pet_feeding.fragment.schedule_feednow
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 
 class MainActivity : AppCompatActivity() {
@@ -23,12 +26,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        if (Firebase.auth.currentUser == null){
+            startActivity(Intent(this,AuthenticationActivity::class.java))
+        }
+
         setContentView(R.layout.activity_main)
-
-
         replaceFragment(profileFragment)
-
-
         val bottom_navigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
         bottom_navigation.setOnNavigationItemSelectedListener{
@@ -39,10 +42,6 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-
-
-
-
     }
 
     private fun replaceFragment(fragment: Fragment) {
@@ -50,9 +49,6 @@ class MainActivity : AppCompatActivity() {
             replace(R.id.fragment_container,fragment)
             commit()
         }
-
-
-
     }
 }
 

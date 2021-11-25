@@ -14,13 +14,28 @@
         <entry key="..\:/Android studio/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20260416666666667" />
         <entry key="..\:/Android studio/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.21875" />
         <entry key="..\:/Android studio/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.21875" />
+        <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.16905537459283387" />
+        <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/drawable/buttonround.xml" value="0.16905537459283387" />
+        <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/drawable/circle_button.xml" value="0.16905537459283387" />
+        <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/drawable/half_background.xml" value="0.16905537459283387" />
         <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/drawable/half_background_sm.xml" value="0.2703125" />
+        <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/drawable/ic_baseline_arrow_forward_24.xml" value="0.16905537459283387" />
+        <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/drawable/ic_baseline_wifi_24.xml" value="0.16905537459283387" />
+        <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.16905537459283387" />
+        <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.16905537459283387" />
+        <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/drawable/ic_launcher_background.xml" value="0.16905537459283387" />
+        <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.16905537459283387" />
+        <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/drawable/round_corner_toggle.xml" value="0.16905537459283387" />
+        <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/activity_add_feeding_device.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/activity_authentication.xml" value="0.16052631578947368" />
         <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/fragment_forgot_password.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/fragment_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/fragment_schedule_feednow.xml" value="0.16052631578947368" />
         <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/fragment_sign_in.xml" value="0.264" />
         <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/fragment_sign_up.xml" value="0.264" />
         <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/fragment_sign_up_verification_code.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/fragment_tell_to_connect_to_device_wifi.xml" value="0.16052631578947368" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3609375" />
         <entry key="app/src/main/res/drawable/circle_button.xml" value="0.3553846153846154" />
         <entry key="app/src/main/res/drawable/half_background.xml" value="0.3553846153846154" />

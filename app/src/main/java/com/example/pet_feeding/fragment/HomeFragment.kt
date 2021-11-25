@@ -25,7 +25,6 @@ class HomeFragment : Fragment() {
 
         bt_add_Device.setOnClickListener {
             replaceFragment(schedule_feednow())
-
         }
 
     }
