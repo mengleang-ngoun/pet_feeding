@@ -19,4 +19,11 @@
     </style>
 
 
+    <style name="mySwitch">
+        <item name="colorControlActivated">@color/Primary_pink</item>
+
+    </style>
+
+
+
 </resources>

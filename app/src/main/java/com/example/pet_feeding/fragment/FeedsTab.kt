@@ -1,12 +1,10 @@
 package com.example.pet_feeding.fragment
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.commit
 import com.example.pet_feeding.R
 import com.google.android.material.tabs.TabLayout
@@ -18,30 +16,30 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [schedule_feednow.newInstance] factory method to
+ * Use the [ScheduleFeed.newInstance] factory method to
  * create an instance of this fragment.
  */
-class schedule_feednow : Fragment() {
+class ScheduleFeed : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_schedule_feednow,container,false)
+        return inflater.inflate(R.layout.fragment_feed,container,false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val bt_tab = view.findViewById<TabLayout>(R.id.bt_tab)
+        val btTab = view.findViewById<TabLayout>(R.id.bt_tab)
 
-        replaceFragment(feednowTab())
-        bt_tab.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+
+        btTab.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
 
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 when(tab?.position){
-                    0 -> replaceFragment(feednowTab())
-                    1 -> replaceFragment(scheduleTab())
+                    0 -> replaceFragment(FeedNowTab())
+                    1 -> replaceFragment(ScheduleTab())
                 }
             }
 

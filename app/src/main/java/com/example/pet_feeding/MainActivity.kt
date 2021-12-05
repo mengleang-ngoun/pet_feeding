@@ -2,13 +2,12 @@ package com.example.pet_feeding
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.pet_feeding.fragment.HomeFragment
 import com.example.pet_feeding.fragment.ProfileFragment
 import com.example.pet_feeding.fragment.SettingFragment
-import com.example.pet_feeding.fragment.schedule_feednow
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -28,10 +27,11 @@ class MainActivity : AppCompatActivity() {
 
         if (Firebase.auth.currentUser == null){
             startActivity(Intent(this,AuthenticationActivity::class.java))
+            finish()
         }
 
         setContentView(R.layout.activity_main)
-        replaceFragment(profileFragment)
+        replaceFragment(homeFragment)
         val bottom_navigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
         bottom_navigation.setOnNavigationItemSelectedListener{
@@ -42,6 +42,11 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+
+
+
+
+
     }
 
     private fun replaceFragment(fragment: Fragment) {

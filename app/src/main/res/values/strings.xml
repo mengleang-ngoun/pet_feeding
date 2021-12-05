@@ -38,4 +38,8 @@
     <string name="amount_of_food">0</string>
     <string name="hint_text_feeding_amount">Feeding Amount</string>
     <string name="Repeat">everyday</string>
+
+    <!-- Create card schedule   -->
+    <string name="Time">Time</string>
+    <string name="FoodValue">Food values(g)</string>
 </resources>
