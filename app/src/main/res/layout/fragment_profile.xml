@@ -38,14 +38,16 @@
                 android:paddingLeft="20dp">
 
                 <TextView
+                    android:id="@+id/profile_username"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pitt David"
+                    android:text="@null"
                     android:textColor="@color/white"
                     android:textSize="35dp"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/profile_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="pittdavid@gmail.com"

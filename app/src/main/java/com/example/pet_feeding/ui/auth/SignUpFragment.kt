@@ -19,9 +19,13 @@ import com.google.android.material.progressindicator.CircularProgressIndicator
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlin.math.log
+import kotlin.reflect.jvm.internal.impl.load.kotlin.JvmType
 
 class SignUpFragment : Fragment() {
     private lateinit var authentication: FirebaseAuth
@@ -32,7 +36,10 @@ class SignUpFragment : Fragment() {
     private lateinit var loading: CircularProgressIndicator
     private lateinit var signInNav: FrameLayout
     private lateinit var signUpBtn: ImageButton
-
+    private lateinit var documentReference: DocumentReference
+    private lateinit var fStore:FirebaseFirestore
+    private lateinit var uid:String
+    private lateinit var fAuth:FirebaseAuth
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -51,6 +58,11 @@ class SignUpFragment : Fragment() {
         passwordInput = view.findViewById(R.id.sign_up_password)
         conPasswordInput = view.findViewById(R.id.sign_up_con_password)
         loading = view.findViewById(R.id.loading)
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance()
+
+
+
 
         signInNav.setOnClickListener {
             requireActivity().supportFragmentManager.commit {
@@ -128,17 +140,19 @@ class SignUpFragment : Fragment() {
             }
         }
     }
+    private fun saveNameFireStore(username: String){
+        uid = fAuth.currentUser?.uid.toString()
+        documentReference = fStore.collection("users").document(uid)
+        val user: MutableMap <String , Any> = HashMap()
+        user["username"] = username
+        documentReference.set(user)
+    }
 
     private fun createAccount(email: String, password: String) {
         authentication.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
-                    Firebase.firestore.collection("usernames").add(
-                        hashMapOf(
-                            "username" to usernameInput.editText?.text.toString(),
-                            "udi" to Firebase.auth.currentUser?.uid
-                        )
-                    )
+                    saveNameFireStore(usernameInput.editText?.text.toString())
                     startActivity(Intent(requireContext(), MainActivity::class.java))
                     requireActivity().finish()
                 } else {
@@ -148,5 +162,7 @@ class SignUpFragment : Fragment() {
                 signUpBtn.visibility = View.VISIBLE
             }
     }
+
+
 
 }

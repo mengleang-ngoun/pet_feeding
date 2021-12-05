@@ -6,11 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.fragment.app.commit
 import com.example.pet_feeding.R
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 
 
 class HomeFragment : Fragment() {
+    private lateinit var documentReference: DocumentReference
+    private lateinit var uid:String
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -21,10 +28,23 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val bt_add_Device = view.findViewById<Button>(R.id.bt_add_device)
+        val btAddDevice = view.findViewById<Button>(R.id.bt_add_device)
+        val username  = view.findViewById<TextView>(R.id.tx_title)
+        btAddDevice.setOnClickListener {
+            replaceFragment(ScheduleFeed())
+        }
+        Firebase.auth.currentUser?.let {
+            uid   =  Firebase.auth.currentUser!!.uid.toString()
+        }
 
-        bt_add_Device.setOnClickListener {
-            replaceFragment(schedule_feednow())
+        documentReference = FirebaseFirestore.getInstance().collection("users").document(uid)
+        documentReference.addSnapshotListener { snapshot, error ->
+            if(error != null){
+                return@addSnapshotListener
+            }
+            if (snapshot != null && snapshot.exists()){
+                username.text ="Hi " + snapshot.getString("username").toString()
+            }
         }
 
     }

@@ -41,4 +41,8 @@
     <string name="connect_device_to_internet">Connect device to internet</string>
     <string name="available_network">Available network</string>
     <string name="password_wifi">Password</string>
+
+    <!-- Create card schedule   -->
+    <string name="Time">Time</string>
+    <string name="FoodValue">Food values(g)</string>
 </resources>

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragment.schedule_feednow"
+    tools:context=".fragment.ScheduleFeed"
     android:background="@drawable/bg_schedule_feednow"
     android:layout_marginTop="20dp">
 
@@ -19,16 +19,12 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/feed_now"
-
-
-            />
+            android:text="@string/feed_now"/>
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/schedule" />
-
 
     </com.google.android.material.tabs.TabLayout>
 
@@ -37,11 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/bt_tab"
-        android:orientation="vertical">
-
-
-
-    </LinearLayout>
+        android:orientation="vertical"></LinearLayout>
 
 
 
