@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         if (Firebase.auth.currentUser == null){
             startActivity(Intent(this,AuthenticationActivity::class.java))
             finish()
@@ -40,7 +41,6 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-        super.onCreate(savedInstanceState)
     }
 
     private fun replaceFragment(fragment: Fragment) {

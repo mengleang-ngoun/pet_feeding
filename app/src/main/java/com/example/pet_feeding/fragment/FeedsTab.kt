@@ -32,7 +32,7 @@ class ScheduleFeed : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val btTab = view.findViewById<TabLayout>(R.id.bt_tab)
-
+        replaceFragment(FeedNowTab())
 
         btTab.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
 
