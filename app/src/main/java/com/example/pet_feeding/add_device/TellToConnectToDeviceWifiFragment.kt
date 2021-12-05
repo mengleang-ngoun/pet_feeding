@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.pet_feeding.R
 
-class TellToConnectToDeviceWifi: Fragment() {
+class TellToConnectToDeviceWifiFragment: Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

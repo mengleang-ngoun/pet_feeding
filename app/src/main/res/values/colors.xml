@@ -10,6 +10,7 @@
 
 <!--color for pet feeding app-->
     <color name="white">#FFFFFFFF</color>
+    <color name="grey">#CCC</color>
     <color name="white_50p">#80FFFFFF</color>
     <color name="white_100p">#00FFFFFF</color>
     <color name="Primary_pink">#FEABAE</color>

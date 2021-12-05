@@ -24,10 +24,9 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
         if (Firebase.auth.currentUser == null){
             startActivity(Intent(this,AuthenticationActivity::class.java))
+            finish()
         }
 
         setContentView(R.layout.activity_main)
@@ -42,6 +41,7 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+        super.onCreate(savedInstanceState)
     }
 
     private fun replaceFragment(fragment: Fragment) {

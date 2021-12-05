@@ -38,4 +38,7 @@
     <string name="amount_of_food">0</string>
     <string name="hint_text_feeding_amount">Feeding Amount</string>
     <string name="Repeat">everyday</string>
+    <string name="connect_device_to_internet">Connect device to internet</string>
+    <string name="available_network">Available network</string>
+    <string name="password_wifi">Password</string>
 </resources>
