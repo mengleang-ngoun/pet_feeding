@@ -28,11 +28,11 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val btAddDevice = view.findViewById<Button>(R.id.bt_add_device)
+//        val btAddDevice = view.findViewById<Button>(R.id.bt_add_device)
         val username  = view.findViewById<TextView>(R.id.tx_title)
-        btAddDevice.setOnClickListener {
-            replaceFragment(ScheduleFeed())
-        }
+//        btAddDevice.setOnClickListener {
+//            replaceFragment(ScheduleFeed())
+//        }
         Firebase.auth.currentUser?.let {
             uid   =  Firebase.auth.currentUser!!.uid.toString()
         }

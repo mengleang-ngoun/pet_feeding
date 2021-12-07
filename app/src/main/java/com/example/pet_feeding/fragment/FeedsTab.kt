@@ -33,7 +33,7 @@ class ScheduleFeed : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val btTab = view.findViewById<TabLayout>(R.id.bt_tab)
 
-
+        replaceFragment(FeedNowTab())
         btTab.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
 
             override fun onTabSelected(tab: TabLayout.Tab?) {
@@ -57,6 +57,7 @@ class ScheduleFeed : Fragment() {
     private fun replaceFragment(fragment: Fragment) {
         requireActivity().supportFragmentManager.commit{
             replace(R.id.bt_tab_container,fragment)
+            addToBackStack("schedule")
         }
 
     }
