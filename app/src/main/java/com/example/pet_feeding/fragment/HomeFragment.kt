@@ -52,6 +52,7 @@ class HomeFragment : Fragment() {
     private fun replaceFragment(fragment: Fragment) {
         requireActivity().supportFragmentManager.commit{
             replace(R.id.fragment_container,fragment)
+            addToBackStack("schedule")
         }
 
         }
