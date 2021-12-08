@@ -57,6 +57,7 @@ class ScheduleFeed : Fragment() {
     private fun replaceFragment(fragment: Fragment) {
         requireActivity().supportFragmentManager.commit{
             replace(R.id.bt_tab_container,fragment)
+            addToBackStack("schedule")
         }
 
     }

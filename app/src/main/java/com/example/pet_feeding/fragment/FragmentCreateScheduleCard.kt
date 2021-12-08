@@ -77,15 +77,19 @@ class FragmentCreateScheduleCard : Fragment() {
         addSchedule.setOnClickListener {
 
             getFoodAmount = foodAmount.editText?.text.toString()
+            if (getFoodAmount != ""  && picker != null){
+                db.child("schedules").child(Firebase.auth.currentUser?.uid.toString())
+                    .push().setValue(object {
+                        val hour = getHour
+                        val minute =  getMinute
+                        val foodAmount =  getFoodAmount
+                        val btSwitch =  getSwitch })
+                Toast.makeText(requireContext(), "successfully added schedule", Toast.LENGTH_SHORT).show()
+                replaceFragment(ScheduleTab())
+            }else{
+                Toast.makeText(requireContext(),"Please input value",Toast.LENGTH_SHORT).show()
+            }
 
-            db.child("schedules").child(Firebase.auth.currentUser?.uid.toString())
-                .push().setValue(object {
-                    val hour = getHour
-                    val minute =  getMinute
-                    val foodAmount =  getFoodAmount
-                    val btSwitch =  getSwitch })
-            Toast.makeText(requireContext(), "successfully added schedule", Toast.LENGTH_SHORT).show()
-            replaceFragment(ScheduleTab())
 
         }
 
@@ -103,6 +107,7 @@ class FragmentCreateScheduleCard : Fragment() {
     private fun replaceFragment(fragment: Fragment) {
         requireActivity().supportFragmentManager.commit{
             replace(R.id.bt_tab_container,fragment)
+            addToBackStack("schedule")
         }
 
     }

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.commit
 import com.example.pet_feeding.AuthenticationActivity
 import com.example.pet_feeding.R
 import com.example.pet_feeding.ui.auth.SignInFragment
@@ -26,6 +27,11 @@ class SettingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val signIn = SignInFragment()
         val btLogout = view.findViewById<Button>(R.id.bt_logout)
+        val btDevice = view.findViewById<Button>(R.id.bt_device)
+        btDevice.setOnClickListener{
+            replaceFragment(ScheduleFeed())
+
+        }
 
         btLogout.setOnClickListener{
             signOut();
@@ -37,6 +43,15 @@ class SettingFragment : Fragment() {
 
     private fun signOut(){
         FirebaseAuth.getInstance().signOut()
+    }
+
+
+    private fun replaceFragment(fragment: Fragment) {
+        requireActivity().supportFragmentManager.commit{
+            replace(R.id.fragment_container,fragment)
+            addToBackStack("schedule")
+        }
+
     }
 
 

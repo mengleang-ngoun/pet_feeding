@@ -68,6 +68,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/round_corner_toggle"
         android:textColor="@color/white"
+        android:inputType="number"
         android:maxLength="16"/>
 
     </com.google.android.material.textfield.TextInputLayout>
