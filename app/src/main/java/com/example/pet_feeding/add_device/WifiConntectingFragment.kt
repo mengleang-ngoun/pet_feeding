@@ -20,7 +20,10 @@ import com.example.pet_feeding.*
 import com.example.pet_feeding.model.Wifi
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputLayout
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import org.json.JSONObject
+import java.lang.reflect.Method
 import java.util.*
 
 class WifiConntectingFragment(private val selectedWifi: Wifi) : Fragment() {
@@ -78,27 +81,46 @@ class WifiConntectingFragment(private val selectedWifi: Wifi) : Fragment() {
                 )
             )
         }
-        super.onViewCreated(view, savedInstanceState)
-    }
-
-    override fun onStart() {
-        var timer = Timer()
-        timer.scheduleAtFixedRate(object : TimerTask(){
+        var json = JSONObject()
+        json.put("uuid", Firebase.auth.currentUser?.uid)
+        MySingleton.getInstance(requireContext()).addToRequestQueue(
+            JsonObjectRequest(
+                Request.Method.POST,
+                "http://192.168.1.1:80/addd_user_uuid",
+                json,
+                {
+                        response ->
+                    Log.d("test", "run: $response")
+                },
+                {
+                        error ->
+                    Log.d("test", "run: $error")
+                })
+        )
+        val timer = Timer()
+        val context = requireContext()
+        timer.scheduleAtFixedRate(object : TimerTask() {
             override fun run() {
                 MySingleton.getInstance(requireContext()).addToRequestQueue(
                     JsonObjectRequest(
                         Request.Method.GET, "http://192.168.1.1:80/status_ap", null,
                         { response ->
-                            if(loading){
-                                if (response.getInt("status") == 1 || response.getInt("status") == 6 || response.getInt("status") == 4) {
+                            if (loading) {
+                                if (response.getInt("status") == 1 || response.getInt("status") == 6 || response.getInt(
+                                        "status"
+                                    ) == 4
+                                ) {
                                     passwordInput.error = "Please check password again"
                                     loading = false
                                     btnConnectWifi.isEnabled = true
                                     linearProgressIndicator.visibility = View.GONE
                                 } else if (response.getInt("status") == 3) {
+                                    timer.cancel()
                                     startActivity(
-                                        Intent(requireContext(),
-                                            MainActivity::class.java)
+                                        Intent(
+                                            context,
+                                            MainActivity::class.java
+                                        )
                                     )
                                     requireActivity().finish()
                                 }
@@ -111,8 +133,9 @@ class WifiConntectingFragment(private val selectedWifi: Wifi) : Fragment() {
                     )
                 )
             }
-        },0,2000)
-        super.onStart()
+        }, 0, 2000)
+        super.onViewCreated(view, savedInstanceState)
     }
+
 }
 
