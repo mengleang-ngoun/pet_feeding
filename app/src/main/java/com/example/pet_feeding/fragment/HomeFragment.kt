@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.commit
 import com.example.pet_feeding.R
+import com.google.android.material.button.MaterialButton
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
@@ -28,15 +29,16 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val btAddDevice = view.findViewById<Button>(R.id.bt_add_device)
         val username  = view.findViewById<TextView>(R.id.tx_title)
-//        btAddDevice.setOnClickListener {
-//            replaceFragment(ScheduleFeed())
-//        }
+        val weightBtn = view.findViewById<MaterialButton>(R.id.pet_weight)
+        val feedBtn = view.findViewById<MaterialButton>(R.id.feeding)
         Firebase.auth.currentUser?.let {
             uid   =  Firebase.auth.currentUser!!.uid.toString()
         }
 
+        feedBtn.setOnClickListener {
+            replaceFragment(ScheduleFeed())
+        }
         documentReference = FirebaseFirestore.getInstance().collection("users").document(uid)
         documentReference.addSnapshotListener { snapshot, error ->
             if(error != null){

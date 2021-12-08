@@ -39,16 +39,21 @@
         <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/activity_add_feeding_device.xml" value="0.16052631578947368" />
         <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/activity_authentication.xml" value="0.16052631578947368" />
         <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/activity_main.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/fragment_feed.xml" value="0.1" />
+        <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/fragment_feednow_tab.xml" value="0.1" />
         <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/fragment_forgot_password.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/fragment_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/fragment_schedule_feednow.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/fragment_schedule_tab.xml" value="0.1" />
         <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/fragment_sign_in.xml" value="0.2" />
         <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/fragment_sign_up.xml" value="0.264" />
         <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/fragment_sign_up_verification_code.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/fragment_tell_to_connect_to_device_wifi.xml" value="0.16052631578947368" />
         <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/fragment_wifi_conecting.xml" value="0.264" />
         <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/fragment_wifi_list.xml" value="0.2" />
+        <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/pet_feeding_start.xml" value="0.1" />
+        <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/schedule_layout.xml" value="0.1" />
         <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/wifi_item.xml" value="0.176" />
         <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/wifi_item_ripple.xml" value="0.16052631578947368" />
         <entry key="..\:/Users/Ngoun Mengleang/StudioProjects/pet_feeding/app/src/main/res/layout/wifi_list.xml" value="0.16052631578947368" />

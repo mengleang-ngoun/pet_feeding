@@ -74,22 +74,39 @@
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/bt_add_device"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_centerVertical="true"
-            android:backgroundTint="@color/white"
-            android:text="@string/add_device"
-            android:textColor="@color/purple"
-            app:icon="@drawable/ic_roundcross"
-            app:iconGravity="textStart"
-            app:iconSize="24dp"
-            app:iconTint="@color/purple"
-            app:shapeAppearanceOverlay="@style/buttonShape" />
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/pet_weight"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="5dp"
+                android:backgroundTint="@color/white"
+                android:text="Weight"
+                android:textColor="@color/purple"
+                app:iconGravity="textStart"
+                app:iconSize="24dp"
+                app:iconTint="@color/purple"
+                app:shapeAppearanceOverlay="@style/buttonShape" />
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/feeding"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="5dp"
+                android:backgroundTint="@color/white"
+                android:text="Feed"
+                android:textColor="@color/purple"
+                app:iconGravity="textStart"
+                app:iconSize="24dp"
+                app:iconTint="@color/purple"
+                app:shapeAppearanceOverlay="@style/buttonShape" />
 
+        </LinearLayout>
     </RelativeLayout>
 
 
