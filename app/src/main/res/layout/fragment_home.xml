@@ -74,16 +74,18 @@
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true">
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/pet_weight"
                 android:layout_width="0dp"
                 android:layout_height="70dp"
-                android:layout_weight="1"
                 android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
                 android:backgroundTint="@color/white"
                 android:text="Weight"
                 android:textColor="@color/purple"
@@ -96,8 +98,8 @@
                 android:id="@+id/feeding"
                 android:layout_width="0dp"
                 android:layout_height="70dp"
-                android:layout_weight="1"
                 android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
                 android:backgroundTint="@color/white"
                 android:text="Feed"
                 android:textColor="@color/purple"

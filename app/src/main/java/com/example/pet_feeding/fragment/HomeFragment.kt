@@ -32,6 +32,7 @@ class HomeFragment : Fragment() {
         val username  = view.findViewById<TextView>(R.id.tx_title)
         val weightBtn = view.findViewById<MaterialButton>(R.id.pet_weight)
         val feedBtn = view.findViewById<MaterialButton>(R.id.feeding)
+
         Firebase.auth.currentUser?.let {
             uid   =  Firebase.auth.currentUser!!.uid.toString()
         }
@@ -49,7 +50,12 @@ class HomeFragment : Fragment() {
             }
         }
 
+        weightBtn.setOnClickListener {
+            replaceFragment(Weight())
+        }
+
     }
+
 
     private fun replaceFragment(fragment: Fragment) {
         requireActivity().supportFragmentManager.commit{
