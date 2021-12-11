@@ -45,4 +45,8 @@
     <!-- Create card schedule   -->
     <string name="Time">Time</string>
     <string name="FoodValue">Food values(g)</string>
+
+
+    <string name="weight">Weight</string>
+    <string name="PetWeight">Pet Weight:</string>
 </resources>
