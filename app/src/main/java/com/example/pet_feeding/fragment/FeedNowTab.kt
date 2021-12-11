@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.Toast
 import com.example.pet_feeding.R
+import com.example.pet_feeding.model.ScheduleModel
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
@@ -37,14 +38,31 @@ class FeedNowTab : Fragment() {
 
         btFeedNow.setOnClickListener {
             Log.d("test", "onViewCreated: Hello")
-            if (foodAmount.text.toString() != ""){
-                db.child("FeedNow").child(Firebase.auth.currentUser?.uid.toString()).setValue(Integer.parseInt(foodAmount.text.toString()))
-                Toast.makeText(requireContext(), "Successfully Feed Now", Toast.LENGTH_LONG).show()
-            }else{
-                Toast.makeText(requireContext(), "Please input value", Toast.LENGTH_LONG).show()
+            db.child("FeedNow").child(Firebase.auth.currentUser?.uid.toString()).child("id").get().addOnSuccessListener {
+                if (foodAmount.text.toString() != ""){
+                    db.child("FeedNow").child(Firebase.auth.currentUser?.uid.toString()).setValue(
+                        object {
+                            var id:Int = Integer.parseInt(it.value.toString())+1
+                            var amount:Int = Integer.parseInt(foodAmount.text.toString())
+                        }
+                    )
+                    Toast.makeText(requireContext(), "Successfully Feed Now", Toast.LENGTH_LONG).show()
+                }else{
+                    Toast.makeText(requireContext(), "Please input value", Toast.LENGTH_LONG).show()
+                }
+            }.addOnFailureListener {
+                if (foodAmount.text.toString() != ""){
+                    db.child("FeedNow").child(Firebase.auth.currentUser?.uid.toString()).setValue(
+                        object {
+                            var id:Int = 1
+                            var amount:Int = Integer.parseInt(foodAmount.text.toString())
+                        }
+                    )
+                    Toast.makeText(requireContext(), "Successfully Feed Now", Toast.LENGTH_LONG).show()
+                }else{
+                    Toast.makeText(requireContext(), "Please input value", Toast.LENGTH_LONG).show()
+                }
             }
-
-
         }
 
     }
