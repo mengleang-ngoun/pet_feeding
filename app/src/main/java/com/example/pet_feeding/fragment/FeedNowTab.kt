@@ -40,24 +40,22 @@ class FeedNowTab : Fragment() {
             Log.d("test", "onViewCreated: Hello")
             db.child("FeedNow").child(Firebase.auth.currentUser?.uid.toString()).child("id").get().addOnSuccessListener {
                 if (foodAmount.text.toString() != ""){
-                    db.child("FeedNow").child(Firebase.auth.currentUser?.uid.toString()).setValue(
-                        object {
-                            var id:Int = Integer.parseInt(it.value.toString())+1
-                            var amount:Int = Integer.parseInt(foodAmount.text.toString())
-                        }
-                    )
-                    Toast.makeText(requireContext(), "Successfully Feed Now", Toast.LENGTH_LONG).show()
-                }else{
-                    Toast.makeText(requireContext(), "Please input value", Toast.LENGTH_LONG).show()
-                }
-            }.addOnFailureListener {
-                if (foodAmount.text.toString() != ""){
-                    db.child("FeedNow").child(Firebase.auth.currentUser?.uid.toString()).setValue(
-                        object {
-                            var id:Int = 1
-                            var amount:Int = Integer.parseInt(foodAmount.text.toString())
-                        }
-                    )
+                    if(it.value == null){
+                        db.child("FeedNow").child(Firebase.auth.currentUser?.uid.toString()).setValue(
+                            object {
+                                var id:Int = 1
+                                var amount:Int = Integer.parseInt(foodAmount.text.toString())
+                            }
+                        )
+                    }else{
+                        db.child("FeedNow").child(Firebase.auth.currentUser?.uid.toString()).setValue(
+                            object {
+                                var id:Int = Integer.parseInt(it.value.toString())+1
+                                var amount:Int = Integer.parseInt(foodAmount.text.toString())
+                            }
+                        )
+                    }
+
                     Toast.makeText(requireContext(), "Successfully Feed Now", Toast.LENGTH_LONG).show()
                 }else{
                     Toast.makeText(requireContext(), "Please input value", Toast.LENGTH_LONG).show()
