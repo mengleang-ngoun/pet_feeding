@@ -38,7 +38,7 @@ class FeedNowTab : Fragment() {
         btFeedNow.setOnClickListener {
             Log.d("test", "onViewCreated: Hello")
             if (foodAmount.text.toString() != ""){
-                db.child("FeedNow").child(Firebase.auth.currentUser?.uid.toString()).setValue(foodAmount.text.toString())
+                db.child("FeedNow").child(Firebase.auth.currentUser?.uid.toString()).setValue(Integer.parseInt(foodAmount.text.toString()))
                 Toast.makeText(requireContext(), "Successfully Feed Now", Toast.LENGTH_LONG).show()
             }else{
                 Toast.makeText(requireContext(), "Please input value", Toast.LENGTH_LONG).show()
