@@ -37,19 +37,21 @@ class Weight : Fragment() {
         db = Firebase.database.getReference("PetWeight")
         petWeight = view.findViewById(R.id.pet_weight)
 
-//    db.addValueEventListener(object : ValueEventListener {
-//        override fun onDataChange(snapshot: DataSnapshot) {
-//            val value = child(Firebase.auth.uid.toString()).value
-//            Log.d("test",value.toString())
-//        }
-//        override fun onCancelled(error: DatabaseError) {
-//            TODO("Not yet implemented")
-//        }
-//    })
-        db.child(Firebase.auth.uid.toString()).get().addOnSuccessListener {
+    db.addValueEventListener(object : ValueEventListener {
+        override fun onDataChange(snapshot: DataSnapshot) {
+           db.child(Firebase.auth.uid.toString()).get().addOnSuccessListener {
+               petWeight.text = it.value.toString()
+           }
 
-            petWeight.text = it.value.toString()
         }
+        override fun onCancelled(error: DatabaseError) {
+            TODO("Not yet implemented")
+        }
+    })
+//        db.child(Firebase.auth.uid.toString()).get().addOnSuccessListener {
+//
+//            petWeight.text = it.value.toString()
+//        }
 
 
 
